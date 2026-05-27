@@ -656,7 +656,7 @@
       </div>
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-num" id="projects-count" data-target="{{ projects|length }}">0</div>
+          <div class="stat-num" id="projects-count" data-target="9">0</div>
           <div class="stat-label">Projects</div>
         </div>
         <div class="stat-item">
@@ -664,7 +664,7 @@
           <div class="stat-label">Languages</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num" id="certs-count" data-target="{{ certifications|length }}">0</div>
+          <div class="stat-num" id="certs-count" data-target="3">0</div>
           <div class="stat-label">Certifications</div>
         </div>
       </div>
@@ -766,25 +766,30 @@
       <div class="section-line"></div>
     </div>
     <div class="proj-grid">
-  {% for project in projects %}
-  <div class="proj-card {% if project.featured %}featured{% endif %} reveal" style="animation-delay: {{ loop.index0 * 0.05 }}s">
-    <div class="proj-header">
-      <div class="proj-icon">{{ project.icon or '🔧' }}</div>
-      <div class="proj-badges">
-        {% for badge in project.badges.split(',') %}
-        <span class="badge badge-{{ badge.lower().strip() }}">{{ badge.strip() }}</span>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="proj-title">{{ project.title }}</div>
-    <p class="proj-desc">{{ project.description }}</p>
-    <div class="proj-stack">
-      {% for tech in project.stack.split(',') %}
-      <span class="stack-tag">{{ tech.strip() }}</span>
-      {% endfor %}
+  <div class="proj-card featured reveal">
+  <div class="proj-header">
+    <div class="proj-icon">🛡</div>
+
+    <div class="proj-badges">
+      <span class="badge badge-sec">Security</span>
+      <span class="badge badge-ai">AI</span>
     </div>
   </div>
-  {% endfor %}
+
+  <div class="proj-title">
+    DevSecOps Security Scanner
+  </div>
+
+  <p class="proj-desc">
+    Automated vulnerability scanner with AI-assisted reporting and network analysis.
+  </p>
+
+  <div class="proj-stack">
+    <span class="stack-tag">Python</span>
+    <span class="stack-tag">Docker</span>
+    <span class="stack-tag">Linux</span>
+  </div>
+</div>
 </div>
   </div>
 </section>
@@ -797,16 +802,23 @@
       <div class="section-line"></div>
     </div>
     <div class="certs-grid">
-  {% for cert in certifications %}
-  <div class="cert-card reveal" style="animation-delay: {{ loop.index0 * 0.1 }}s">
-    <div class="cert-logo">{{ cert.logo }}</div>
-    <div>
-      <div class="cert-name">{{ cert.name }}</div>
-      <div class="cert-issuer">{{ cert.issuer }}</div>
-      <div class="cert-date">{{ cert.date }}</div>
+  <div class="cert-card reveal">
+  <div class="cert-logo">AWS</div>
+
+  <div>
+    <div class="cert-name">
+      AWS Cloud Practitioner
+    </div>
+
+    <div class="cert-issuer">
+      Amazon Web Services
+    </div>
+
+    <div class="cert-date">
+      2025
     </div>
   </div>
-  {% endfor %}
+</div>
 </div>
   </div>
 </section>
